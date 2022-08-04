@@ -29,10 +29,10 @@ public class Main {
 
         Runnable operatorFunc = () -> {
             String operatorName = Thread.currentThread().getName();
+            Call call;
             while (!Thread.interrupted()) {
-                while (linkedBlockingQueue.peek() != null) {
+                while ( (  call = linkedBlockingQueue.poll() ) != null) {
                     try {
-                        Call call = linkedBlockingQueue.poll();
                         System.out.printf("Оператор %s начал обработку  %s\n",
                                 operatorName,
                                 call.getTelephone());
