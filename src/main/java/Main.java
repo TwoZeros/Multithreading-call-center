@@ -31,7 +31,7 @@ public class Main {
             String operatorName = Thread.currentThread().getName();
             Call call;
             while (!Thread.interrupted()) {
-                while ( (  call = linkedBlockingQueue.poll() ) != null) {
+                while ((call = linkedBlockingQueue.poll()) != null) {
                     try {
                         System.out.printf("Оператор %s начал обработку  %s\n",
                                 operatorName,
